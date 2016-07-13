@@ -1,0 +1,175 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<title>無標題文件</title>
+<script>
+$(function() {
+	var _titleHeight = 0;
+	$('.navbox_flash').each(function(){
+		// 先取得區塊的高及標題區塊等資料
+		var $this = $(this), 
+			_height = $this.height(), 
+			$flash_text = $('.flash_text', $this),
+			_flash_textHeight = $flash_text.outerHeight(true),
+			_speed = 200;
+		
+		// 當滑鼠移動到區塊上時
+		$this.hover(function(){
+			// 讓 $caption 往上移動
+			$flash_text.stop().animate({
+				top:_flash_textHeight - _titleHeight
+			}, _speed);
+		}, function(){
+			// 讓 $caption 移回原位
+			$flash_text.stop().animate({
+				top: _height - _titleHeight
+			}, _speed);
+		});
+	});
+});
+
+function run() {
+	var i=1;
+	setInterval(function(){
+		if(i==1)
+		{
+			document.getElementById("show").src="img/flash_img1.jpg";
+			i--;
+		}else{
+			document.getElementById("show").src="img/flash_img2.jpg";
+			i++;
+		}
+	},5000);
+}
+</script>
+</head>
+
+<body onLoad="run()">
+<div>
+    <div id="header">
+        <img class="logo_img" src="img/header_logo.jpg"/>
+        <div id="header_img">
+        	<div>Social Networks</div></br>
+            <img src="img/google_icon.jpg"/>
+            <img src="img/fb_icon.jpg"/>
+            <img src="img/skp_icon.jpg"/>
+        </div>
+    </div>
+    
+<img src="img/flash_img2.jpg" id="show">
+
+	<div class="contentbox">
+        <div class="navbar">
+        	<ul>
+            	<li><a href="#">首頁</a></li>
+                <li><a href="#">2016活動</a></li>
+                <li><a href="#">教學</a></li>
+                <li><a href="#">歷屆課程</a></li>
+                <li><a href="#">認證說明會</a></li>
+       		</ul>
+        </div>
+        <div id="navbox">
+        <a href="http://www.onecertify.org/mod/page/view.php?id=80">
+                <img src="img/content_box1.jpg">
+                
+                	<h2>學校系所</h2>
+                	<div class="navbox_text">
+                增加通過的國際認證種類及數量</br>與業界接軌，提升學校/系所特定專業.</br> (IT, Database, Developer)</br>增加招生入取率及畢業學生，專業就業率</br>
+                	</div>
+         </a>
+            <a href="http://www.onecertify.org/mod/page/view.php?id=80">
+                    <img src="img/content_box2.jpg">
+                    <h2>協同教學</h2>
+                    <div class="navbox_text">
+                    開學前提供整學期/學年的認證規劃書</br>提供完整教育訓練</br>提供 80% 通過率的保證</br>教師研習課程
+                    </div>
+            </a>
+            <a href="http://www.onecertify.org/mod/page/view.php?id=80">
+                    <img src="img/content_box3.jpg">
+                    <h2>人才培育</h2>
+                    <div class="navbox_text">
+                    專業訓練與證照教育學程</br>校園技能競賽活動與企業合作</br>實習與業界合作</br>專題與企業合作
+                    </div>
+            </a>
+        </div>
+        <div class="news_font">最新公告|News</div>
+        <div class="news_text">
+        	<a href="#"><font>近期活動相關課程公告....</font><font class="news_data">2015.07.01</font></a></br>
+            <a href="#"><font>近期活動相關課程公告....</font><font class="news_data">2015.07.01</font></a></br>
+            <a href="#"><font>近期活動相關課程公告....</font><font class="news_data">2015.07.01</font></a></br>
+            <a href="#"><font>近期活動相關課程公告....</font><font class="news_data">2015.07.01</font></a></br>
+            <a href="#"><font>近期活動相關課程公告....</font><font class="news_data">2015.07.01</font></a>
+        </div>
+        <div class="newsimg_box">
+        <div class="navbox_flash">
+			<img src="img/navbox_01.jpg"/>
+    		<div class="flash_text">
+    			<h4><a href="#" title="競賽活動">競賽活動</a></h4>
+    		</div>
+		</div>
+        <div class="navbox_flash">
+			<img src="img/navbox_02.jpg"/>
+    		<div class="flash_text">
+   			  	<h4><a href="#" title="物聯網" style="color:#009">物聯網</a></h4>
+   		  	</div>
+		</div>
+        <div class="navbox_flash">
+			<img src="img/navbox_03.jpg"/>
+    		<div class="flash_text">
+    			<h4><a href="#" title="程式開發">程式開發</a></h4>
+    		</div>
+		</div>
+        <div class="navbox_flash">
+			<img src="img/navbox_04.jpg"/>
+    		<div class="flash_text">
+    			<h4><a href="#" title="雲端相關課程" style="color:#009">雲端相關課程</a></h4>
+    		</div>
+		</div>
+        <div class="navbox_flash">
+			<img src="img/navbox_05.jpg"/>
+    		<div class="flash_text">
+    			<h4><a href="#" title="管理相關課程">管理相關課程</a></h4>
+    		</div>
+		</div>
+        <div class="navbox_flash">
+			<img src="img/navbox_06.jpg"/>
+    		<div class="flash_text">
+    			<h4><a href="#" title="Big Data及資料庫" style="color:#009">Big Data及資料庫</a></h4>
+    		</div>
+		</div>
+        <div class="navbox_flash">
+			<img src="img/navbox_07.jpg"/>
+    		<div class="flash_text">
+    			<h4><a href="#" title="IT系統及資安">IT系統及資安</a></h4>
+    		</div>
+		</div>
+        <div class="navbox_flash">
+			<img src="img/navbox_08.jpg"/>
+    		<div class="flash_text">
+    			<h4><a href="#" title="網路行銷" style="color:#009">網路行銷</a></h4>
+    		</div>
+		</div>
+        <a href="#"><img src="img/qr.jpg"/></a>
+        </div>
+        <div class="logo_home_font">認證資訊</div>
+        <div class="logo_home">
+        <a href="#"><img src="img/logo_1.jpg"/></a>
+        <a href="#"><img src="img/logo_2.jpg"/></a>
+        <a href="#"><img src="img/logo_3.jpg"/></a>
+        <a href="#"><img src="img/logo_4.jpg"/></a>
+        <a href="#"><img src="img/logo_5.jpg"/></a>
+        <a href="#"><img src="img/logo_6.jpg"/></a>
+        <a href="#"><img src="img/logo_7.jpg"/></a>
+        </div>
+    </div>
+    <div class="footer_bottom">
+    <h2>全域科技公司</h2><p>
+    <h3>TEL:04-25600752</h3>
+    <h3>E-mail: chienhom@certitraining.org</h3>
+    </div>
+</div>
+</body>
+</html>

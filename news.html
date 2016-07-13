@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="css/css.css" />
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<title>無標題文件</title>
+<script>
+$(function() {
+	//----
+	var con="";
+	  	for(i=0;i<5;i++){
+			con+="<a href='http://google.com.tw'><font>font................             </font><font>Date</font></a><p>";
+		$("#con-form").html(con);
+	}
+});
+
+function run() {
+	var i=1;
+	setInterval(function(){
+		if(i==1)
+		{
+			document.getElementById("show").src="img/flash_img1.jpg";
+			i--;
+		}else{
+			document.getElementById("show").src="img/flash_img2.jpg";
+			i++;
+		}
+	},3000);
+}
+	
+</script>
+</head>
+
+<body onLoad="run()">
+<div>
+    <div id="header">
+        <img class="logo_img" src="img/header_logo.jpg"/>
+        <div id="header_img">
+        	<div>Social Networks</div></br>
+            <img src="img/google_icon.jpg"/>
+            <img src="img/fb_icon.jpg"/>
+            <img src="img/skp_icon.jpg"/>
+        </div>
+    </div>
+<img src="img/flash_img1.jpg" id="show">
+	<div class="contentbox">
+        <div class="navbar">
+        	<ul>
+            	<li><a href="#">首頁</a></li>
+                <li><a href="#">2016活動</a></li>
+                <li><a href="#">教學</a></li>
+                <li><a href="#">歷屆課程</a></li>
+                <li><a href="#">認證說明會</a></li>
+       		</ul>
+        </div>
+            <div class="news_font">最新公告|News</div>
+    <div id="con-form"></div>
+	</div>
+    <div class="footer_bottom">
+    <h2>全域科技公司</h2><p>
+    <h3>TEL:04-25600752</h3>
+    <h3>E-mail: chienhom@certitraining.org</h3>
+    </div>
+</div>
+</body>
+</html>
